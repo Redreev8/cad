@@ -65,7 +65,7 @@ const FormContact: FC = () => {
         })
         setIsLoading(false)
         if (!is) return
-        redirect('/login')
+        redirect('/submission')
     }
     return (
         <Root className={root} onSubmit={handlerSubmit}>
