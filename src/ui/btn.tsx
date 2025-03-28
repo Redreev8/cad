@@ -29,7 +29,7 @@ const Btn: FC<BtnProps> = ({ className, children, href, ...props }) => {
             pb: '14px',
             textStyle: 'btnText',
             transition: 'background-color .6s 0s',
-            borderRadius: '999px',
+            rounded: '999px',
         }),
     )
     if (href) {

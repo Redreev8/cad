@@ -26,8 +26,11 @@ const HomeAlso = () => {
                     className={css({
                         display: 'grid',
                         gap: 5,
-                        lg: { gridTemplateColumns: '1fr 1fr' },
-                        xl: { gridTemplateColumns: '1fr 1fr 1fr' },
+                        gridTemplateColumns: {
+                            base: '1fr',
+                            lg: '1fr 1fr',
+                            xl: '1fr 1fr 1fr',
+                        },
                     })}
                 >
                     <HomeAlsoItem>

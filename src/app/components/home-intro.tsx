@@ -12,33 +12,40 @@ const HomeIntro = () => {
             <Container
                 className={css({
                     display: 'flex',
-                    flexDir: 'column',
-                    gap: 10,
-                    xl: {
-                        flexDir: 'row',
+                    flexDir: {
+                        base: 'column',
+                        xl: 'row',
                     },
+                    gap: 10,
                 })}
             >
                 <div
                     className={css({
                         display: 'flex',
-                        flexDir: 'column',
-                        gap: 5,
+                        flexDir: {
+                            base: 'column',
+                            lg: 'row',
+                            xl: 'column',
+                        },
+                        gap: {
+                            base: 5,
+                            lg: 10,
+                            xl: 5,
+                        },
                         zIndex: 1,
-                        lg: { flexDir: 'row', gap: 10 },
                         xl: {
                             maxW: '540px',
-                            gap: 5,
-                            flexDir: 'column',
                         },
                     })}
                 >
                     <Title
                         className={css({
-                            w: '100%',
+                            w: {
+                                base: '100%',
+                                lg: '420px',
+                                xl: '740px',
+                            },
                             flexShrink: 0,
-                            lg: { w: '420px' },
-                            xl: { w: '740px' },
                         })}
                         id={idTitleHomeIntro}
                         as="h1"
@@ -47,8 +54,7 @@ const HomeIntro = () => {
                     </Title>
                     <Text
                         className={css({
-                            lg: { marginTop: '30px' },
-                            xl: { marginTop: 0 },
+                            mt: { lg: '30px', xl: 0 },
                         })}
                     >
                         title on the pageLorem ipsum dolor sit amet, consectetur
@@ -60,11 +66,11 @@ const HomeIntro = () => {
                 <div
                     className={css({
                         bgColor: 'card',
-                        borderRadius: '20px',
+                        rounded: '20px',
                         w: '100%',
                         h: '330px',
-                        xl: {
-                            maxW: '540px',
+                        maxW: {
+                            xl: '540px',
                         },
                     })}
                 ></div>

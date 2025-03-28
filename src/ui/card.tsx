@@ -6,7 +6,7 @@ const styles = css({
     bgColor: 'card',
     py: 4,
     px: 5,
-    borderRadius: '20px',
+    rounded: '20px',
 })
 
 const Card: FC<AreaHTMLAttributes<HTMLDivElement>> = ({
