@@ -3,16 +3,14 @@ import classNames from 'classnames'
 import { AreaHTMLAttributes, FC } from 'react'
 
 const styles = css({
-    maxW: '1200px',
-    w: '100vw',
-    ml: 'auto',
-    mr: 'auto',
-    pl: 5,
-    pr: 5,
-    lg: {
-        pl: 10,
-        pr: 10,
+    maxW: { base: '100vw', xl: '1200px' },
+    w: '100%',
+    mx: 'auto',
+    px: {
+        base: 5,
+        lg: 10,
     },
+    boxSizing: 'border-box',
 })
 
 const Container: FC<AreaHTMLAttributes<HTMLDivElement>> = ({

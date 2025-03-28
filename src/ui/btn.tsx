@@ -9,12 +9,20 @@ type HTMLProps = Omit<LinkProps, 'href'> &
 export interface BtnProps extends HTMLProps {
     href?: string
     target?: '_blank'
+    isCircle?: boolean
 }
 
-const Btn: FC<BtnProps> = ({ className, children, href, ...props }) => {
+const Btn: FC<BtnProps> = ({
+    className,
+    children,
+    href,
+    isCircle,
+    ...props
+}) => {
     const cl = classNames(
         className,
         css({
+            cursor: 'pointer',
             display: 'block',
             textAlign: 'center',
             bgColor: {
@@ -31,6 +39,19 @@ const Btn: FC<BtnProps> = ({ className, children, href, ...props }) => {
             transition: 'background-color .6s 0s',
             rounded: '999px',
         }),
+        {
+            [css({
+                w: '180px',
+                h: '180px',
+                rotate: {
+                    base: '16deg',
+                    _hover: '0deg',
+                    _focus: '0deg',
+                    _active: '0deg',
+                },
+                transition: 'background-color .6s 0s, rotate .6s 0s',
+            })]: isCircle,
+        },
     )
     if (href) {
         return (
