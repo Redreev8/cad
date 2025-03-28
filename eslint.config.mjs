@@ -29,6 +29,7 @@ const eslintConfig = [
             '@pandacss/prefer-longhand-properties': 'off',
             '@pandacss/prefer-composite-properties': 'off',
             '@pandacss/no-physical-properties': 'off',
+            '@pandacss/no-dynamic-styling': 'off',
             '@pandacss/no-debug': 'error',
         },
     },
