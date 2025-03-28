@@ -19,6 +19,10 @@ export const metadata: Metadata = {
 const styles = css({
     bgColor: 'bg',
     color: 'text',
+    display: 'flex',
+    minH: '100vh',
+    flexDir: 'column',
+    justifyContent: 'space-between',
 })
 
 export default function RootLayout({

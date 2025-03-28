@@ -11,6 +11,7 @@ export interface BtnProps extends HTMLProps {
     target?: '_blank'
     isCircle?: boolean
     isDefaultBase?: boolean
+    isLoading?: boolean
 }
 
 const Btn: FC<BtnProps> = ({
@@ -19,6 +20,7 @@ const Btn: FC<BtnProps> = ({
     href,
     isCircle,
     isDefaultBase,
+    isLoading,
     ...props
 }) => {
     const circleStyle = {
@@ -42,23 +44,29 @@ const Btn: FC<BtnProps> = ({
             cursor: 'pointer',
             display: 'block',
             textAlign: 'center',
-            bgColor: {
-                base: 'action',
-                _hover: 'actionHover',
-                _focus: 'actionHover',
-                _active: 'actionActive',
-            },
             pt: 4,
             pl: 5,
             pr: 5,
             pb: '14px',
             textStyle: 'btnText',
-            transition: 'background-color .6s 0s',
+            transition: 'background-color .6s 0s, opacity .6s 0s',
             rounded: '999px',
         }),
         {
             [css(circleStyle)]: isCircle && !isDefaultBase,
             [css({ lg: circleStyle })]: isCircle && isDefaultBase,
+            [css({
+                bgColor: 'disabledBtn',
+                animation: 'bounce 1s infinite',
+            })]: isLoading,
+            [css({
+                bgColor: {
+                    base: 'action',
+                    _hover: 'actionHover',
+                    _focus: 'actionHover',
+                    _active: 'actionActive',
+                },
+            })]: !isLoading,
         },
     )
     if (href) {
@@ -74,6 +82,7 @@ const Btn: FC<BtnProps> = ({
     }
     return (
         <button
+            disabled={isLoading}
             type="button"
             className={cl}
             {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}

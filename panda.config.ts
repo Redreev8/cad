@@ -1,5 +1,5 @@
 import { defineConfig } from '@pandacss/dev'
-import { textStyles } from './text-styles'
+import { textStyles } from './styles/text-styles'
 
 export default defineConfig({
     // Whether to use css reset
@@ -10,7 +10,6 @@ export default defineConfig({
 
     // Files to exclude
     exclude: [],
-
     // Useful for theme customization
     theme: {
         extend: {
@@ -27,6 +26,10 @@ export default defineConfig({
                     actionHover: { value: '#FD5E37' },
                     actionActive: { value: '#FD8060' },
                     text: { value: '#050901' },
+                    red: { value: '#FD3737' },
+                    placeholder: { value: '#817D71' },
+                    disabledInput: { value: '#EFF7A8' },
+                    disabledBtn: { value: '#EE8641' },
                 },
             },
         },
