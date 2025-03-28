@@ -7,7 +7,9 @@ import { redirect } from 'next/navigation'
 export default async function Submission() {
     const headersList = await headers()
     const referer = headersList.get('referer')
-    if (!referer || !referer.match(/\/contact(?=\/)$/g)) {
+    console.log(referer)
+    console.log(referer.match(/\/contact(\/?)$/g))
+    if (!referer || !referer.match(/\/contact(\/?)$/g)) {
         redirect('/contact')
     }
     return (
