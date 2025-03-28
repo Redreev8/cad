@@ -9,7 +9,10 @@ const styles = css({
     },
     mb: '80px',
     '&:first-child': {
-        mt: '110px',
+        mt: {
+            base: '120px',
+            lg: '200px',
+        },
     },
 })
 

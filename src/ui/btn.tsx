@@ -10,6 +10,7 @@ export interface BtnProps extends HTMLProps {
     href?: string
     target?: '_blank'
     isCircle?: boolean
+    isDefaultBase?: boolean
 }
 
 const Btn: FC<BtnProps> = ({
@@ -17,8 +18,24 @@ const Btn: FC<BtnProps> = ({
     children,
     href,
     isCircle,
+    isDefaultBase,
     ...props
 }) => {
+    const circleStyle = {
+        display: 'flex',
+        gap: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        w: '180px',
+        h: '180px',
+        rotate: {
+            base: '16deg',
+            _hover: '0deg',
+            _focus: '0deg',
+            _active: '0deg',
+        },
+        transition: 'background-color .6s 0s, rotate .6s 0s',
+    }
     const cl = classNames(
         className,
         css({
@@ -40,17 +57,8 @@ const Btn: FC<BtnProps> = ({
             rounded: '999px',
         }),
         {
-            [css({
-                w: '180px',
-                h: '180px',
-                rotate: {
-                    base: '16deg',
-                    _hover: '0deg',
-                    _focus: '0deg',
-                    _active: '0deg',
-                },
-                transition: 'background-color .6s 0s, rotate .6s 0s',
-            })]: isCircle,
+            [css(circleStyle)]: isCircle && !isDefaultBase,
+            [css({ lg: circleStyle })]: isCircle && isDefaultBase,
         },
     )
     if (href) {
