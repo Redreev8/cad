@@ -4,11 +4,11 @@ import { css } from '../../../../styled-system/css'
 import Section from '@/ui/section'
 import FormContact from '@/components/form-contact'
 
-export const idTitleHomeIntro = 'contact-form'
+export const idTitleSectionContactForm = 'contact-form'
 
 const ContactForm = () => {
     return (
-        <Section aria-labelledby={idTitleHomeIntro}>
+        <Section aria-labelledby={idTitleSectionContactForm}>
             <Container
                 className={css({
                     display: 'flex',
@@ -16,7 +16,7 @@ const ContactForm = () => {
                     gap: 10,
                 })}
             >
-                <Title>Most important title on the page</Title>
+                <Title as="h1">Most important title on the page</Title>
                 <FormContact />
             </Container>
         </Section>
