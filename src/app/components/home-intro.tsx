@@ -46,7 +46,10 @@ const HomeIntro = () => {
                         Most important title on the page
                     </Title>
                     <Text
-                        className={css({ lg: { mt: '30px' }, xl: { mt: 0 } })}
+                        className={css({
+                            lg: { marginTop: '30px' },
+                            xl: { marginTop: 0 },
+                        })}
                     >
                         title on the pageLorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Aliquam mattis, leo et condimentum

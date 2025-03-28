@@ -23,7 +23,9 @@ export default defineConfig({
                 colors: {
                     bg: { value: '#D8FC50' },
                     card: { value: '#FFF3E3' },
-                    action: { value: '#FD5E37' },
+                    action: { value: '#EE3202' },
+                    actionHover: { value: '#FD5E37' },
+                    actionActive: { value: '#FD8060' },
                     text: { value: '#050901' },
                 },
             },

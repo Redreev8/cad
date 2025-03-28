@@ -20,6 +20,7 @@ const eslintConfig = [
         },
         rules: {
             '@typescript-eslint/no-empty-object-type': 'warn',
+            '@pandacss/no-margin-properties': 'off',
             'react/display-name': 'off',
             '@pandacss/no-debug': 'error',
             ...panda.configs.recommended.rules,

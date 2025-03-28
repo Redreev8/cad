@@ -3,18 +3,13 @@ import { css } from '../../styled-system/css'
 import classNames from 'classnames'
 
 const styles = css({
-    '&:last-child': {
-        mb: '80px',
+    mt: {
+        base: '80px',
+        lg: '140px',
     },
-    mt: '80px',
+    mb: '80px',
     '&:first-child': {
         mt: '110px',
-    },
-    lg: {
-        mt: '140px',
-        '&:first-child': {
-            mt: '140px',
-        },
     },
 })
 
