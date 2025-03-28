@@ -33,7 +33,7 @@ const Header: FC<AreaHTMLAttributes<HTMLDivElement>> = ({ ...props }) => {
                 />
                 <nav>
                     <Btn
-                        href="contact"
+                        href="/contact"
                         className={css({
                             pointerEvents: 'all',
                         })}

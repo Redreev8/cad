@@ -7,7 +7,6 @@ import FieldWap from './field-wrap'
 import Input from '@/ui/input'
 import Textarea from '@/ui/textarea'
 import consoleAction from '@/actions/console.action'
-import { redirect } from 'next/navigation'
 
 const classes = sva({
     slots: ['root', 'textareae', 'btn'],
@@ -58,14 +57,12 @@ const FormContact: FC = () => {
         const elements = e.currentTarget.elements
         setIsLoading(true)
 
-        const is = await consoleAction({
+        await consoleAction({
             name: elements.name.value,
             email: elements.email.value,
             message: elements.message.textContent!,
         })
         setIsLoading(false)
-        if (!is) return
-        redirect('/contact/submission')
     }
     return (
         <Root className={root} onSubmit={handlerSubmit}>
