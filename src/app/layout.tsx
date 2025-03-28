@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 }
 
 const styles = css({
-    backgroundColor: 'bg',
-    color: 'text'
+    bgColor: 'bg',
+    color: 'text',
 })
 
 export default function RootLayout({
