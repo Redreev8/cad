@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Titillium_Web } from 'next/font/google'
 import './globals.css'
 import { css } from '../../styled-system/css'
+import Footer from '@/components/footer'
 
 const mono = Titillium_Web({
     variable: '--font-mono',
@@ -26,7 +27,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${mono.variable} ${styles}`}>{children}</body>
+            <body className={`${mono.variable} ${styles}`}>
+                <main>{children}</main>
+                <Footer />
+            </body>
         </html>
     )
 }

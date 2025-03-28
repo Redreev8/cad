@@ -9,7 +9,10 @@ export const idTitleHomeLess = 'home-less'
 
 const HomeLess = () => {
     return (
-        <Section aria-labelledby={idTitleHomeLess}>
+        <Section
+            className={css({ mb: '200px' })}
+            aria-labelledby={idTitleHomeLess}
+        >
             <Container>
                 <Card
                     className={css({
