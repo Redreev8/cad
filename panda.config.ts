@@ -1,5 +1,5 @@
 import { defineConfig } from '@pandacss/dev'
-import { textStyles } from './styled-system/text-styles'
+import { textStyles } from './text-styles'
 
 export default defineConfig({
     // Whether to use css reset
