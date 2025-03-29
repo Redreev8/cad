@@ -1,5 +1,5 @@
 ![screenshot sped test desktop](public/decstop.png)
-![screenshot sped test mobile](publick/mobile.png)
+![screenshot sped test mobile](public/mobile.png)
 
 ## Commands  
 
