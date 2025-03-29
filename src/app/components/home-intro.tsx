@@ -3,6 +3,7 @@ import Text from '@/ui/text'
 import Title from '@/ui/title'
 import { css } from '../../../styled-system/css'
 import Section from '@/ui/section'
+import Player from '@/components/player'
 
 export const idTitleHomeIntro = 'home-intro'
 
@@ -32,7 +33,7 @@ const HomeIntro = () => {
                             lg: 10,
                             xl: 5,
                         },
-                        zIndex: 1,
+                        zIndex: 2,
                         xl: {
                             maxW: '540px',
                         },
@@ -63,17 +64,7 @@ const HomeIntro = () => {
                         lacus tincidunt ante
                     </Text>
                 </div>
-                <div
-                    className={css({
-                        bgColor: 'card',
-                        rounded: '20px',
-                        w: '100%',
-                        h: '330px',
-                        maxW: {
-                            xl: '540px',
-                        },
-                    })}
-                ></div>
+                <Player url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
             </Container>
         </Section>
     )
