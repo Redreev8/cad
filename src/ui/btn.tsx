@@ -21,6 +21,7 @@ const Btn: FC<BtnProps> = ({
     isCircle,
     isDefaultBase,
     isLoading,
+    disabled,
     ...props
 }) => {
     const circleStyle = {
@@ -56,9 +57,11 @@ const Btn: FC<BtnProps> = ({
             [css(circleStyle)]: isCircle && !isDefaultBase,
             [css({ lg: circleStyle })]: isCircle && isDefaultBase,
             [css({
-                bgColor: 'disabledBtn',
                 animation: 'bounce 1s infinite',
-            })]: isLoading,
+            })]: isLoading && !disabled,
+            [css({
+                bgColor: 'disabledBtn',
+            })]: isLoading || disabled,
             [css({
                 bgColor: {
                     base: 'action',
@@ -66,7 +69,7 @@ const Btn: FC<BtnProps> = ({
                     _focus: 'actionHover',
                     _active: 'actionActive',
                 },
-            })]: !isLoading,
+            })]: !isLoading && !disabled,
         },
     )
     if (href) {
@@ -82,7 +85,7 @@ const Btn: FC<BtnProps> = ({
     }
     return (
         <button
-            disabled={isLoading}
+            disabled={isLoading || disabled}
             type="button"
             className={cl}
             {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}

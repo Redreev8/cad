@@ -19,7 +19,12 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     isLoading?: boolean
 }
 
-const Input: FC<InputProps> = ({ className, isLoading, ...props }) => {
+const Input: FC<InputProps> = ({
+    className,
+    disabled,
+    isLoading,
+    ...props
+}) => {
     const cl = classNames(className, style, {
         [css({
             bgColor: {
@@ -29,12 +34,14 @@ const Input: FC<InputProps> = ({ className, isLoading, ...props }) => {
             },
         })]: !isLoading,
         [css({
-            bgColor: 'disabledInput',
             animation: 'bounce 1s infinite',
-        })]: isLoading,
+        })]: isLoading && !disabled,
+        [css({
+            bgColor: 'disabledInput',
+        })]: isLoading || disabled,
     })
 
-    return <input className={cl} {...props} disabled={isLoading} />
+    return <input className={cl} {...props} disabled={isLoading || disabled} />
 }
 
 export default Input

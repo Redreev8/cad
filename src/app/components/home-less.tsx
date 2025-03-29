@@ -22,7 +22,9 @@ const HomeLess = () => {
                         alignItems: 'center',
                     })}
                 >
-                    <Title as="h2">Less important title</Title>
+                    <Title id={idTitleHomeLess} as="h2">
+                        Less important title
+                    </Title>
                     <Btn
                         className={css({
                             pos: 'absolute',

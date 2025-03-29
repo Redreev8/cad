@@ -21,7 +21,12 @@ interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     isLoading?: boolean
 }
 
-const Textarea: FC<TextareaProps> = ({ className, isLoading, ...props }) => {
+const Textarea: FC<TextareaProps> = ({
+    className,
+    isLoading,
+    disabled,
+    ...props
+}) => {
     const cl = classNames(className, style, {
         [css({
             bgColor: {
@@ -29,13 +34,17 @@ const Textarea: FC<TextareaProps> = ({ className, isLoading, ...props }) => {
                 _hover: 'actionHover',
                 _focus: 'actionHover',
             },
-        })]: !isLoading,
+        })]: !isLoading && !disabled,
+        [css({
+            animation: 'bounce 1s infinite',
+        })]: isLoading && !disabled,
         [css({
             bgColor: 'disabledInput',
-            animation: 'bounce 1s infinite',
-        })]: isLoading,
+        })]: isLoading || disabled,
     })
-    return <textarea className={cl} disabled={isLoading} {...props} />
+    return (
+        <textarea className={cl} disabled={isLoading || disabled} {...props} />
+    )
 }
 
 export default Textarea

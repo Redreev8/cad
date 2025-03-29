@@ -18,7 +18,8 @@ const classes = sva({
             gap: 5,
             lg: {
                 gridTemplateColumns: '1fr 1fr',
-                gridTemplateRows: 'min-content min-content min-content',
+                gridTemplateRows:
+                    'min-content min-content minmax(200px, min-content)',
             },
         },
         textareae: {

@@ -34,7 +34,9 @@ const HomeAlso = () => {
                     })}
                 >
                     <HomeAlsoItem>
-                        <Title as="h2">Also very important title</Title>
+                        <Title id={idTitleHomeAlso} as="h2">
+                            Also very important title
+                        </Title>
                     </HomeAlsoItem>
                     {arr.map((el, i) => (
                         <HomeAlsoItem key={i}>

@@ -21,11 +21,21 @@ interface FieldWapProps {
 }
 
 const fields = sva({
-    slots: ['field', 'message', 'label'],
+    slots: ['field', 'wrap', 'message', 'label'],
     base: {
-        field: { display: 'flex', flexDir: 'column', gap: 2 },
+        field: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexDir: 'column',
+            gap: 2,
+        },
         message: { color: 'red' },
         label: {},
+        wrap: {
+            display: 'flex',
+            flexDir: 'column',
+            gap: 2,
+        },
     },
 })
 
@@ -39,8 +49,10 @@ const FieldWap: FC<FieldWapProps> = ({
     const classes = fields()
     return (
         <Field className={classNames(className, classes.field)} name={name}>
-            <Label className={classes.label}>{label!}</Label>
-            <Control asChild>{children}</Control>
+            <div className={classes.wrap}>
+                <Label className={classes.label}>{label!}</Label>
+                <Control asChild>{children}</Control>
+            </div>
             {messages.map((el, i) => (
                 <Message className={classes.message} key={i} match={el.match}>
                     {el.children}

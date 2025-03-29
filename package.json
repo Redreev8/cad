@@ -14,7 +14,6 @@
     "classnames": "^2.5.1",
     "next": "15.2.4",
     "react": "^19.0.0",
-    "react-aria": "^3.38.1",
     "react-dom": "^19.0.0",
     "react-player": "^2.16.0"
   },

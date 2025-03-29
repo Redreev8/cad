@@ -44,10 +44,10 @@ export const metadata: Metadata = {
 const styles = css({
     bgColor: 'bg',
     color: 'text',
-    display: 'flex',
     minH: '100vh',
-    flexDir: 'column',
-    justifyContent: 'space-between',
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    gridTemplateRows: '1fr min-content',
 })
 
 export default function RootLayout({

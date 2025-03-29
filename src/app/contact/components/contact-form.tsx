@@ -16,7 +16,9 @@ const ContactForm = () => {
                     gap: 10,
                 })}
             >
-                <Title as="h1">Most important title on the page</Title>
+                <Title id={idTitleSectionContactForm} as="h1">
+                    Most important title on the page
+                </Title>
                 <FormContact />
             </Container>
         </Section>
